@@ -25,6 +25,7 @@ if (is_user_logged_in()) {
 }
 
 ?>
+<h2 color="red">global/form-login.php</h2>
 <form class="woocommerce-form woocommerce-form-login login" method="post" <?php echo ($hidden) ? 'style="display:none;"' : ''; ?>>
 
   <div class="card mb-3">

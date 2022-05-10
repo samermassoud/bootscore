@@ -247,7 +247,7 @@ function bootscore_wc_capture_hook_output($hookName) {
 
 
 // Redirect to my-account if offcanvas login failed
-// add_action('woocommerce_login_failed', 'bootscore_redirect_on_login_failed', 10, 0);
+ add_action('woocommerce_login_failed', 'bootscore_redirect_on_login_failed', 10, 0);
 // add_action is conflicting with openid login
 function bootscore_redirect_on_login_failed() {
   // Logout user doesn't have session, we need this to display notices
@@ -261,7 +261,7 @@ function bootscore_redirect_on_login_failed() {
 
 
 // Redirect to home on logout
-// add_action('wp_logout', 'bootscore_redirect_after_logout');
+ add_action('wp_logout', 'bootscore_redirect_after_logout');
 // add_action is conflicting with openid login
 function bootscore_redirect_after_logout() {
   wp_redirect(home_url());
@@ -271,7 +271,7 @@ function bootscore_redirect_after_logout() {
 
 
 // Redirect to my-account after (un)sucessful registration
-// add_action('wp_loaded', 'bootscore_redirect_after_registration', 999);
+ add_action('wp_loaded', 'bootscore_redirect_after_registration', 999);
 // add_action is conflicting with openid login
 function bootscore_redirect_after_registration() {
   $nonce_value = isset($_POST['_wpnonce']) ? wp_unslash($_POST['_wpnonce']) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
